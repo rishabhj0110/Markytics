@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="page-breadcrumb">
+        <div class="row">
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="alert alert-success">{{msg}}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 align-self-center">
+                <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">Welcome {{user}} !!</h2>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item">Begin by reporting an incident and view previously reported ones.</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

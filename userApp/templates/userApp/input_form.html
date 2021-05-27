@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% load crispy_forms_tags %}
+
+    
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 align-self-center">
+                <h2 class="page-title text-truncate text-dark font-weight-small mb-1">New Master Incident</h2>
+                <h3 style="margin-top: 20px;" class="page-title text-truncate text-medium font-weight-small mb-1">Initial Reporting</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-12">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-lg-3">
+                            <label>Location</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">{{form.location}}</div> 
+                        </div>
+                    </div>
+                        
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Incident description : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.description}}</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Date and Time of Incident : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-10">
+                                <div class="form-group">{{form.date}}</div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">{{form.time}}</div>    
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Incident location : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{form.location_description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Initial Severity : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.severity}}</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Suspected Cause : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.cause}}</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Immediate Action Taken : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.actions}}</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Sub Incident Types : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.subIncidents}}</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Reported by : </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">{{form.reported_by}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <div class="text-right">
+                            <input type="submit" class="btn btn-info" value="Save">
+                            <input type="submit" class="btn btn-info" value="Save for later">
+                            <input type="reset" class="btn btn-dark" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}
+
